@@ -1,0 +1,35 @@
+@mixin button {
+    
+        background-color: $button-color;
+        border: .1rem solid $button-color;
+        border-radius: 0rem;
+        color: #fff !important;
+        transition: all .3s ease-in-out;
+        padding : .75rem 1rem;
+        font-size: .9rem;
+        text-decoration: none;
+        
+        span {
+          vertical-align: middle;
+        }
+      
+        &:focus {
+          box-shadow: unset;
+        }
+        &:hover{
+          color: $button-color !important;
+          background-color: #fff !important;
+          -webkit-box-shadow: 5px -5px 0px -2px rgba(0,0,0,0.75);
+          -moz-box-shadow: 5px -5px 0px -2px rgba(0,0,0,0.75);
+          box-shadow: 5px -5px 0px -2px rgba(0,0,0,0.75);
+
+          span {
+              color : $primary;
+          }
+        }   
+}
+
+@mixin paraStyle {
+    font-size : .9rem;
+    color : $text-color;
+}
