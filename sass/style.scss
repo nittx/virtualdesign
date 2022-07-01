@@ -1,0 +1,571 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lato:wght@400;700;900&family=Nunito:wght@400;500;600;700;900&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;600;700;800&display=swap");
+
+@import "btnStyle";
+
+.container-fluid {
+  padding : 0 4%;
+}
+
+$primary: #f0582d;
+$navLinks: rgb(58, 58, 58);
+$button-color: #2f2f2f;
+$text-color: gray;
+
+$bannerHeight: 600px;
+
+$ff-inter: "Inter", sans-serif;
+$ff-lato: "Lato", sans-serif;
+$ff-nunito: "Nunito", sans-serif;
+$ff-poppins: "Poppins", sans-serif;
+$ff-playfair: "Playfair Display", serif;
+
+* {
+  font-family: $ff-poppins;
+}
+
+.section-margin {
+  padding: 55px 0;
+}
+
+//============================================================================
+// Section 1 - Navbar
+//============================================================================
+
+.navbar {
+  background-color: rgb(255, 255, 255);
+  font-family: $ff-poppins;
+
+  .btn {
+    background-color: #ffffff;
+    border: 0.1rem solid $button-color;
+    border-radius: 0rem;
+    color: $button-color !important;
+    transition: all 0.3s;
+
+    &:focus {
+      box-shadow: unset;
+    }
+    &:hover {
+      background-color: $button-color;
+      color: #fff !important;
+    }
+  }
+
+  a {
+    color: $navLinks;
+    transition: color 1s ease-in-out;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+    text-transform: uppercase;
+    color: rgb(34, 34, 34);
+
+    &:hover {
+      color: darken($navLinks, 30%);
+    }
+
+    &:focus {
+      color: darken($navLinks, 30%);
+    }
+  }
+
+  .dropdown-menu {
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem 0;
+    border-radius: unset;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .dropdown-item {
+      background-color: rgb(255, 255, 255);
+      text-transform: capitalize;
+      padding: 1rem;
+
+      &:hover {
+        background-color: lightgray;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+  .dropdown-divider {
+    margin: 0;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .menu-icon {
+    font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+    color: $button-color;
+    font-size: 2rem;
+  }
+
+  .phone-icon {
+    font-size: 1rem;
+  }
+}
+
+//============================================================================
+// Section 2 - Banner
+//============================================================================
+
+#banner {
+  margin-top: 90px;
+  margin-bottom: 100px;
+}
+
+.banner {
+  background-image: linear-gradient(to top, rgb(255, 255, 255), white);
+  // background-color: #F0EEE4;
+
+  h6 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  h1 {
+    font-family: $ff-playfair;
+    font-size: 3rem;
+  }
+
+  p {
+    color: $text-color;
+    font-size: 0.9rem;
+  }
+
+  .c-title {
+    color: $text-color;
+    text-transform: uppercase;
+  }
+
+  .banner-carousel {
+    // height: calc(100vh - 90px);
+    height: $bannerHeight;
+    position: relative;
+
+    .carousel-item {
+      height: $bannerHeight;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+
+  .arrows1 {
+    position: absolute;
+    display: flex;
+    gap: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+
+    .prev-arrow,
+    .next-arrow {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      font-size: 0.9rem;
+      color: $text-color;
+
+      span {
+        color: $text-color;
+        transition: all 0.5s;
+      }
+      &:hover span {
+        color: $primary;
+      }
+    }
+  }
+
+  .banner-buttons .btn {
+    @include button;
+  }
+}
+
+//============================================================================
+// Section 2 - facilities
+//============================================================================
+
+.facilities {
+  // margin: 50px 0;
+
+  .facilities-card {
+    font-size: 0.9rem;
+    color: darken($text-color, 10%);
+
+    p {
+      font-size: 0.9rem;
+      color: $text-color;
+    }
+
+    svg {
+      transition: all 0.25s ease-in;
+      fill: $text-color;
+      transform: scale(1);
+    }
+
+    &:hover svg {
+      fill: $primary;
+      transform: translateY(-0.2rem);
+    }
+  }
+}
+
+//============================================================================
+// Section 4 -
+//============================================================================
+
+#aboutUs {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  p {
+    @include paraStyle;
+  }
+
+  .btn {
+    @include button;
+  }
+}
+
+//============================================================================
+// Section 5 -
+//============================================================================
+
+#recentProjects {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  .recent-project-container {
+    display: flex;
+    gap: 0.1rem;
+
+    .recent-project-card {
+      flex: 1;
+      height: 500px;
+      position: relative;
+      transition: flex 0.5s ease-in-out;
+
+      &:hover {
+        flex: 2;
+
+        img {
+          filter: grayscale(0%);
+        }
+
+        .recent-project-card-text {
+          opacity: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease-in-out;
+      }
+      .recent-project-card-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0)
+        );
+        width: 100%;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        transition-delay: 0.5s;
+
+        h5 {
+          letter-spacing: 0.1rem;
+          font-size: 1rem;
+        }
+
+        p {
+          letter-spacing: 0.1rem;
+          font-size: 0.9rem;
+          color: #fff;
+        }
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 0.9rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+//============================================================================
+// Section 6 - Services
+//============================================================================
+
+.services {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  svg {
+    fill: darken($text-color, 10%);
+    transform: scale(1);
+  }
+}
+
+//============================================================================
+// Portfolio
+//============================================================================
+
+.portfolio {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  .nav-link-style.active {
+    background-color: $button-color;
+    border: 0.1rem solid $button-color;
+    border-radius: 0rem;
+    color: #fff !important;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .nav-link-style {
+    background-color: #fff;
+    border: 0.1rem solid $button-color;
+    border-radius: 0rem;
+    color: $button-color !important;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $button-color;
+      border: 0.1rem solid $button-color;
+      border-radius: 0rem;
+      color: #fff !important;
+      transition: all 0.3s ease-in-out;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+  }
+
+  .homepage-portfolio {
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: $text-color;
+    }
+
+    h5 {
+      color: #000;
+    }
+  }
+
+  .btn {
+    @include button;
+  }
+
+  .portfolio-img-box {
+    position: relative;
+
+    .bottom-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s;
+      z-index: 111;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover .bottom-image {
+      opacity: 1;
+    }
+  }
+}
+
+//============================================================================
+// Instagram posts
+//============================================================================
+
+.instagram {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  .ig-post {
+    position: relative;
+    overflow: hidden;
+    
+    img {
+ 
+      transition: all .5s;
+      transform: scale(1);
+    }
+    
+    &:hover img {
+      transform:  scale(1.1);
+      
+    }
+    
+    &:hover .ig-icon {
+      opacity: 1;
+    }
+  }
+  
+  .ig-icon {
+    position: absolute;
+    top : 0;
+    left : 0;
+    z-index : 1111;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.616), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: all .5s;
+
+    svg {
+      transform: scale(2);
+      fill : rgb(221, 221, 221);
+    }
+  }
+
+
+}
+
+
+//============================================================================
+// MEDIA QUERIES
+//============================================================================
+@media only screen and (max-width: 991px) {
+
+  .container-fluid {
+    padding : 0 2%;
+  }
+
+
+  .section-margin {
+    padding: 30px 0;
+  }
+
+  .navbar {
+    .dropdown-menu {
+      box-shadow: unset;
+      background-color: transparent;
+
+      .dropdown-item {
+        background-color: transparent;
+      }
+    }
+  }
+
+  #banner {
+    margin-bottom: 50px;
+  }
+  // size of carousel image
+
+  .banner-carousel {
+    height: 500px !important;
+
+    .carousel-item {
+      height: 500px !important;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .recent-project-container {
+    flex-direction: column;
+    gap: 1.5rem !important;
+
+    .recent-project-card-text {
+      opacity: 1 !important;
+      transition: unset;
+      transition-delay: unset;
+    }
+  }
+}
